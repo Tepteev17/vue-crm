@@ -1,0 +1,44 @@
+@import url('allStyle/fonts-style.css');
+@import url('allStyle/login-style.css');
+@import url('allStyle/nav-bar.css');
+@import url('allStyle/side-bar.css');
+@import url('allStyle/record-style.css');
+@import url('allStyle/register-style.css');
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(
+    to bottom right,  
+    #2C3E50, #FD746C, 
+    #FF8235, #ffff1c, 
+    #92FE9D, #00C9FF, 
+    #a044ff, #e73827);
+  background-repeat: no-repeat;
+  background-size: 1000% 1000%;
+  animation: gradient 140s ease infinite;
+  font-family: 'Regular-Roboto';
+}
+.app{
+  height: 100vh;
+}
+.app-content{
+  display: flex;
+  height: calc(100% - 80px);
+}
+.app-main-layout{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.app-page{
+  position: relative;
+  width: 80%;
+  margin: 15px;
+}
+@keyframes gradient { 
+    0%{background-position:0% 0%}
+    50%{background-position:100% 100%}
+    100%{background-position:0% 0%}
+  }
