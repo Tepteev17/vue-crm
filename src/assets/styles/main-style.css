@@ -42,3 +42,8 @@ html, body {
     50%{background-position:100% 100%}
     100%{background-position:0% 0%}
   }
+@media (max-width:940px){
+  .app-content{
+    height: calc(100%-50px);
+  }
+}

@@ -25,7 +25,7 @@ export default{
                 {title:'History',path:'/history',},
                 {title:'Planing',path:'/planning',},
                 {title:'New Edit',path:'/record',},
-                {title:'Category',path:'/categories',}
+                {title:'Category',path:'/',}
             ]
         }
     }

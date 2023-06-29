@@ -36,7 +36,7 @@
                 </p>
             </div>
             <div class="logout">
-                <button type="submit" class="btn">login</button>
+                <button type="submit" class="btn">Register</button>
             </div>
             <router-link to="/login" class="profile">Login</router-link>
         </form>
@@ -53,10 +53,10 @@ export default {
         }
     },
     data: () => ({
-        username: '',
-        email: '',
-        password: '',
-        confirmPassword: ''
+        username: 'fdsgdf',
+        email: 'sdfgd@mail.ru',
+        password: '123456789000',
+        confirmPassword: '123456789000'
     }),
     validations: {
         username: { required },
@@ -73,7 +73,7 @@ export default {
         },
     },
     methods: {
-        onSubmit() {
+        async onSubmit() {
             if (this.v$.$invalid) {
                 this.v$.$touch()
                 return
@@ -83,12 +83,13 @@ export default {
                 const formData = {
                     email: this.email,
                     password: this.password,
-                    username: this.username
+                    name: this.username
                 }
-                console.log(formData)
-                this.$router.push('/')
+                try{
+                    await this.$store.dispatch('register', formData)
+                    this.$router.push('/')
+                } catch(err){}
             }
-
         }
     }
 }

@@ -14,10 +14,9 @@
             class="profile">
                Profile
             </router-link>
-            <router-link 
-                class="wrapper-logout"
-                to="/login"
-            ><i class="gg-log-out"></i></router-link>
+            <div class="wrapper-logout"
+                    v-on:click="logout"><i class="gg-log-out"></i></div>
+            
             
     </div>
     </nav>
@@ -42,6 +41,12 @@ export default{
     },
     beforeDestroy(){
         clearInterval(this.interval)
+    },
+    methods:{
+        async logout(){
+            await this.$store.dispatch('logout')
+            this.$router.push('/login')
+        }
     }
 }
 </script>
