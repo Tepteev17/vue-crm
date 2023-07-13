@@ -6,6 +6,7 @@ import store from './store'
 import firebase from 'firebase/compat/app'
 import 'firebase/compat/auth'
 import 'firebase/compat/database'
+import loader from '@/components/loader.vue'
 
 const config = {
   apiKey: "AIzaSyC3AoGRV0JdjI3KpS60hun3UuyvFhRW_Vo",
@@ -23,7 +24,8 @@ let app
 firebase.initializeApp(config)
 firebase.auth().onAuthStateChanged(() => {
     if (!app){
-    app = createApp(App).use(store).use(router).mount('#app')
+    app = createApp(App).component('loader', loader).use(store).use(router).mount('#app')
+
     }
 })
 

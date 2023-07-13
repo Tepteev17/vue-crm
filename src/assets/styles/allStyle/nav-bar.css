@@ -1,14 +1,9 @@
 .navbar {
-    height: 80px;
-    background-color: rgb(24, 22, 22);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0px 50px 0px 100px;
+    content: '';
+    background: inherit;
 }
-
 .navbar .logo {
-    font-size: 33px;
+    font-size: 20px;
     color: aliceblue;
     font-weight: 600px;
 }
@@ -38,9 +33,6 @@
     border-radius: 5px;
     padding: 8px 10px;
 }
-
-
-
 .navbar .menu-btn {
     color: white;
     font-size: 20px;
@@ -57,134 +49,82 @@ section h1 {
     font-size: 40px;
     padding: 80px;
 }
-
-.profile {
-    color: white;
-    text-decoration: none;
+.title-header{
+    color: #262F3D;
+    font-size: 36px;
+    font-style: normal;
     font-weight: 500;
-    padding: 8px;
-    transition: all 0.3s ease;
-    letter-spacing: 1px;
-    list-style: none;
+    line-height: 48px;
 }
-
-.gg-log-out {
-    box-sizing: border-box;
-    position: relative;
-    display: block;
-    width: 10px;
-    height: 30px;
-    border: 2px solid;
-    transform: scale(var(--ggs, 1));
-    border-right: 0;
-    border-top-left-radius: 2px;
-    border-bottom-left-radius: 2px;
+.btn-new-note{
+    width: 177px;
 }
-
-.gg-log-out::after,
-.gg-log-out::before {
-    content: "";
-    display: block;
-    box-sizing: border-box;
-    position: absolute
+.btn-blue{
+    box-shadow: 0px 8px 16px 0px rgba(70, 143, 197, 0.08);
+    background: #468FC5;
+    border: none;
 }
-
-.gg-log-out::after {
-    border-top: 2px solid;
-    border-left: 2px solid;
-    transform: rotate(-45deg);
-    width: 12px;
-    height: 12px;
-    left: 4px;
-    bottom: 6px
+.wrapper-comunication-header{
+    display: flex;
+    gap: 12px;
 }
-
-.gg-log-out::before {
-    border-radius: 3px;
-    width: 16px;
-    height: 2px;
-    background: currentColor;
-    left: 4px;
-    bottom: 11px
+.btn-blue img{
+    margin-right:8px;
 }
-
-.logo {
-    width: 15%;
+#notifications{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    box-shadow: 0px 8px 16px 0px rgba(70, 143, 197, 0.08);
+    border-radius: 12px;
+    border: 1px solid  #E7F6FB;
+    background: #FFF;
+}
+.nav-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 38px 96px;
+    height: calc(120px - 76px);
+}
+.search-wrapper{
+    position:relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
-.wrapper-logout {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    color: white;
-    cursor: pointer;
+  
+.search-input-wrapper{
+      position:relative;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      width: 50%;
 }
-
-@media (max-width: 940px) {
-    section h1 {
-        /* text-align: center; */
-        font-size: 20px;
-        /* padding: 80px; */
-    }
-    .navbar{
-        display: block;
-        height: 50px;
-
-    }
-    .logo{
-        width: 100%;
-        justify-content: space-between;
-    }
-    .wrapper-logout{
-        width: 10%;
-        float: right;
-    }
-    .navbar ul {
-        position: fixed;
-        top: 80px;
-        left: -100%;
-        background-color: black;
-        height: calc(100%-50px);
-        width: 100%;
-        display: block;
-        /* padding: 5px; */
-        text-align: center;
-        transition: all 0.3s ease;
-    }
-
-    #click:checked~ul {
-
-        left: 0;
-    }
-
-    #click:checked~.menu-btn i:before {
-        content: "\f00d";
-    }
-
-    .navbar ul li {
-        margin: 40px 0;
-    }
-
-    .navbar ul li a {
-        background: none;
-        font-size: 20px;
-        display: block;
-    }
-
-    .navbar ul li a:hover {
-        color: cyan;
-        background: none;
-    }
-
-    .navbar ul li a.active {
-        color: cyan;
-        background: none;
-    }
-
-    .navbar .menu-btn {
-        display: block;
-    }
+.search-input{
+      position:relative;
+      width: 100%;
+      height: 100%;
+}
+.search-input input{
+    background:rgba(246, 249, 252, 1);
+    border: none;
+    width: 100%;
+    height: 24px;
+    padding: 0;
+    box-shadow: none;
+    margin: 0 0 0 8px;
+    color:  #9192AD;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.077px;
+    text-shadow: none;
+}
+  .filters-wrapper{
+      position:relative;
+      width: 50%;
 }

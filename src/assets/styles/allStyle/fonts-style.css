@@ -1,12 +1,12 @@
 /* Обычный */
 @font-face {
-	font-family: 'Regular-Roboto'; 
-	src: url(../fonts/RobotoFronts/Roboto-Regular.ttf); 
+	font-family: 'Regular-Lato'; 
+	src: url(../fonts/Lato/Lato-Regular.ttf); 
 }
  
 /* Жирный */
 @font-face {
-	font-family: 'Bolf-Roboto'; 
-	src: url(../fonts/RobotoFronts/Roboto-Bold.ttf); 
+	font-family: 'Bolt-Roboto'; 
+	src: url(../fonts//Lato/Lato-Bold.ttf); 
 }
  

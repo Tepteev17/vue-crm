@@ -4,43 +4,43 @@ import { createRouter, createWebHistory } from 'vue-router'
 const routes = [
   {
     path: '/login',
-    name: 'login',
+    name: 'Login',
     meta: { layout: 'emptyLayout' },
     component: () => import('../views/Login.vue')
   },
   {
     path: '/',
-    name: 'categories',
+    name: 'Categories',
     meta: { layout: 'mainLayout' },
     component: () => import('../views/Categories.vue')
   },
   {
     path: '/cashAcc',
-    name: 'cashAcc',
+    name: 'Cash acc',
     meta: { layout: 'mainLayout' },
     component: () => import('../views/CashAcc.vue')
   },
   {
     path: '/planning',
-    name: 'planning',
+    name: 'Planning',
     meta: { layout: 'mainLayout' },
     component: () => import('../views/Planning.vue')
   },
   {
     path: '/record',
-    name: 'record',
+    name: 'New Edit',
     meta: { layout: 'mainLayout' },
     component: () => import('../views/Record.vue')
   },
   {
     path: '/history',
-    name: 'history',
+    name: 'History',
     meta: { layout: 'mainLayout' },
     component: () => import('../views/History.vue')
   },
   {
     path: '/profile',
-    name: 'profile',
+    name: 'Profile',
     meta: { layout: 'mainLayout' },
     component: () => import('../views/Profile.vue')
   },

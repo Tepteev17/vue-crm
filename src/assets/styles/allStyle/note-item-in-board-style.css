@@ -1,0 +1,40 @@
+.wrapper-note-item {
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid var(--stroke-primary, #E7F6FB);
+    background: var(--any-primary-white, #FFF);
+    /* Blue */
+    box-shadow: 0px 8px 16px 0px rgba(70, 143, 197, 0.08);
+}
+
+.content-wrapper-note-item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.position-number {
+    color: var(--any-primary-black, #262F3D);
+    /* Caption */
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0.067px;
+    border-radius: 6px;
+    background: var(--background-grey, #F6F9FC);display: flex;
+    padding: 4px 8px;
+    align-items: flex-start;
+}
+
+.subhead {}
+
+.date-wrapper {}
+
+.start-date {}
+
+.end-date {}
+
+.wrapper-details {}
+
+.details-item {}

@@ -1,0 +1,51 @@
+.planning-wrapper{
+    position:relative;
+    padding: 36px 96px;
+    display: flex;
+    gap: 36px;
+    overflow-x: scroll;
+}
+.planning-board{
+  position:relative;
+  display: flex;
+  gap: 36px;
+  
+}
+.board-item{
+ 
+}
+.header-board-item{
+    padding: 16px 24px;
+    border-radius: 16px 16px 8px 8px;
+    background: var(--background-grey, #F6F9FC);
+    width: 345px;
+}
+.board-item.new-items-class .header-board-item{
+  position:relative;
+  box-shadow: 0px 2px 0px 0px #6375D4 inset;
+}
+.board-item.in-work-items-class .header-board-item{
+    box-shadow: 0px 2px 0px 0px #1AB9EB inset;
+}
+.board-item.suspended-items-class .header-board-item{
+    box-shadow: 0px 2px 0px 0px #E19421 inset;
+}
+.board-item.complited-items-class .header-board-item{
+    box-shadow: 0px 2px 0px 0px #27D8AD inset;
+}
+.board-item.canceled-items-class .header-board-item{
+    box-shadow: 0px 2px 0px 0px #d82727 inset;
+}
+.header-board-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.wrapper-board-item-list{
+    padding: 24px 0;
+}
+.board-item-list{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}

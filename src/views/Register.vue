@@ -78,7 +78,7 @@ export default {
                 this.v$.$touch()
                 return
             }
-
+            
             if (!this.v$.$error) {
                 const formData = {
                     email: this.email,
