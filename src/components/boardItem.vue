@@ -1,17 +1,17 @@
 <template>
     <div class="board-item"
-        :class="boardItem.class">
+        :class="[boardItem.class,{'disable-board-item':isDisableItem || !length}]">
         <div class="header-board-item">
             <div class="subhead">
                 {{ boardItem.title }}
-                <span class="lenght-borad-item">( {{ 0 }} )</span>
+                <span class="lenght-borad-item">( {{ length }} )</span>
             </div>
-            <div class="wrapper-arrow-board-item">
+            <div class="wrapper-arrow-board-item" v-on:click="disableItemBoard" >
                 <img src="@/assets/img/arrow-hide-board-item.svg" alt="">
             </div>
         </div>
-        <div class="wrapper-board-item-list">
-            <div class="board-item-list">
+        <div class="wrapper-board-item-list" :class="{'disable-board-item':isDisableItem}">
+            <div class="board-item-list" >
                     <noteItemBoard
                         class="list-item"
                         v-for="itemNote in filterNotesList"
@@ -33,14 +33,28 @@ export default{
     },
     data(){
         return{
+            isDisableItem:false,
+            Noteslist:null
         }
     },
     computed:{
         filterNotesList(){
             try{
                 const noteList = this.$store.getters.info.userNotesTags[this.boardItem.key]
+                this.Noteslist = noteList
                 return noteList
             } catch(e){}
+        },
+        length(){
+            if(this.Noteslist != null){
+                return Object.keys(this.Noteslist).length
+            }
+        }
+
+    },
+    methods:{
+        disableItemBoard(){
+            this.isDisableItem = !this.isDisableItem
         }
     },
     components:{

@@ -5,7 +5,7 @@
                 v-for="boardItem in nameBoardItems"
                 :key="boardItem.key"
                 v-bind:boardItem="boardItem"
-                />
+            />
         </div>
     </div>
 </template>

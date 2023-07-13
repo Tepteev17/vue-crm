@@ -53,10 +53,10 @@ export default {
         }
     },
     data: () => ({
-        username: 'fdsgdf',
-        email: 'sdfgd@mail.ru',
-        password: '123456789000',
-        confirmPassword: '123456789000'
+        username: '',
+        email: '',
+        password: '',
+        confirmPassword: ''
     }),
     validations: {
         username: { required },

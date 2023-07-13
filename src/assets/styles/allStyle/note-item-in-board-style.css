@@ -25,6 +25,8 @@
     background: var(--background-grey, #F6F9FC);display: flex;
     padding: 4px 8px;
     align-items: flex-start;
+    width: 25px;
+    height: 16px;
 }
 
 .subhead {}

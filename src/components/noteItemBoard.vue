@@ -3,8 +3,9 @@
         <div class="content-wrapper-note-item ">
             <div class="position-number">#16</div>
             <div class="subhead">{{itemNote.title}}</div>
-            <div class="date-wrapper">
+            <div class="date-wrapper flex-gap-16 wrapper-date">
                 <div class="start-date silent-text">17.05.2005</div>
+                <span>-</span>
                 <div class="end-date silent-text">17.05.2005</div>
             </div>
             <div class="wrapper-details flex-gap-16">
