@@ -42,6 +42,7 @@
     align-items: center;
 }
 .wrapper-board-item-list{
+    overflow-y: scroll;
     padding: 24px 0;
 }
 .board-item-list{
