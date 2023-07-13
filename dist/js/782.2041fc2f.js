@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkvue_crm"]=self["webpackChunkvue_crm"]||[]).push([[782],{5782:function(r,e,n){n.r(e),n.d(e,{default:function(){return i}});var u=n(3396);const c={class:"profile-wrapper"};function t(r,e){return(0,u.wg)(),(0,u.iD)("div",c," profile ")}var s=n(89);const a={},f=(0,s.Z)(a,[["render",t]]);var i=f}}]);
+//# sourceMappingURL=782.2041fc2f.js.map
