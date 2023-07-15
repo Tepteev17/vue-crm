@@ -94,7 +94,7 @@ export default {
                 shouldDone: '',
                 startDate: '',
                 endDate: '',
-                tag: 'new'
+                tag: ''
             }
         }
     },
@@ -114,6 +114,13 @@ export default {
                     this.$store.dispatch('fetchInfo')
                     await this.$store.dispatch('createNewNote', this.newNoteData)
                     this.$store.commit('hideModal')
+                    this.newNoteData = {
+                            title: '',
+                            shouldDone: '',
+                            startDate: '',
+                            endDate: '',
+                            tag: '',
+                        }
                 } catch (err) {}
             }
         }
@@ -140,7 +147,8 @@ export default {
                         return true
                     }
                 }
-            }
+            },
+            tag:{required}
         }
     },
 

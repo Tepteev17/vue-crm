@@ -1,12 +1,12 @@
 <template>
-    <div class="wrapper-note-item">
+    <div class="wrapper-note-item" v-on:click="currencyNote">
         <div class="content-wrapper-note-item ">
             <div class="position-number">#16</div>
             <div class="subhead">{{itemNote.title}}</div>
             <div class="date-wrapper flex-gap-16 wrapper-date">
-                <div class="start-date silent-text">17.05.2005</div>
+                <div class="start-date silent-text">{{ itemNote.startDate }}</div>
                 <span>-</span>
-                <div class="end-date silent-text">17.05.2005</div>
+                <div class="end-date silent-text">{{ itemNote.endDate }}</div>
             </div>
             <div class="wrapper-details flex-gap-16">
                     <div class="details-item flex-gap-8">
@@ -31,6 +31,12 @@ export default{
         itemNote:{
             type:Object,
             requered:true
+        }
+    },
+    methods:{
+        currencyNote(){
+            this.$store.commit('currencyNote',this.itemNote)
+            this.$store.commit('showModalNoteItem')
         }
     }
 }

@@ -4,7 +4,7 @@
         <div class="header-board-item">
             <div class="subhead">
                 {{ boardItem.title }}
-                <span class="lenght-borad-item">( {{ length }} )</span>
+                <span class="lenght-borad-item">( {{ length || '0'}} )</span>
             </div>
             <div class="wrapper-arrow-board-item" v-on:click="disableItemBoard" >
                 <img src="@/assets/img/arrow-hide-board-item.svg" alt="">
