@@ -114,6 +114,12 @@
 .wrapper-note-change-information {
 }
 
+.change-tags {
+    border-top:#E7F6FB 1px solid;
+    border-bottom:#E7F6FB 1px solid;
+    padding: 36px 0;
+}
+
 .note-change-information {
     display: flex;
     flex-direction: column;
@@ -122,7 +128,6 @@
 
 .change-information-item {
 }
-
 .subhead-change-information-item{
     min-width: 254px;
 }
@@ -156,6 +161,20 @@
     justify-content: center;
     align-items: center;
     color: #43A047;
+    border-radius: 12px;
+    border: 1px solid var(--stroke-primary, #E7F6FB);
+    background: var(--any-primary-white, #FFF);
+    gap: 12px;
+    padding: 12px 24px;
+    align-self: stretch;
+    flex: 1 0 0;
+}
+.remove-notes {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #a82e2e;
     border-radius: 12px;
     border: 1px solid var(--stroke-primary, #E7F6FB);
     background: var(--any-primary-white, #FFF);
@@ -203,6 +222,14 @@
     font-weight: 400;
     line-height: 24px; /* 150% */
     letter-spacing: 0.077px;
+}
+.select-tags .vs__dropdown-toggle{
+    height: 24px;
+}
+.vs__selected{
+    margin: 0;
+    height: 24px;
+    padding: 0 ;
 }
 @keyframes HideList {
   from {

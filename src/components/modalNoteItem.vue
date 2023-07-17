@@ -76,9 +76,18 @@
                             <img src="@/assets/img/mark-check-add-icon.svg" alt="">
                             <div>Save change</div>
                         </button>
+
                     </div>
                 </div>
             </form>
+            <div class="footer-note-interaction">
+                <div class="wrapper-add-notes">
+                    <button class="remove-notes flex-gap-8" type="submit" v-on:click="removeNote">
+                            <img src="@/assets/img/remove-icon.svg" alt="">
+                            <div>Remove note</div>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -112,6 +121,12 @@ export default {
             this.$store.dispatch('fetchInfo')
             await this.$store.dispatch('updateCurrentNote', this.newNoteData)
             this.$store.commit('hideModalNoteItem')
+        },
+        async removeNote(){
+            console.log(1)
+            await this.$store.dispatch('deleteCurrentNote', this.newNoteData)
+            this.$store.commit('hideModalNoteItem')
+            await this.$store.dispatch('fetchInfo')
         }
     },
     computed: {
@@ -120,7 +135,7 @@ export default {
         },
        currencyNoteItem(){
            try{
-                this.newNoteData =this.$store.getters.currencyNote
+                this.newNoteData = this.$store.getters.currencyNote
                 return this.newNoteData
            }catch(e){
             console.log(e)

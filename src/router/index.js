@@ -3,13 +3,13 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
   {
-    path: '/login',
+    path: '/',
     name: 'Login',
     meta: { layout: 'emptyLayout' },
     component: () => import('../views/Login.vue')
   },
   {
-    path: '/',
+    path: '/categories',
     name: 'Categories',
     meta: { layout: 'mainLayout' },
     component: () => import('../views/Categories.vue')

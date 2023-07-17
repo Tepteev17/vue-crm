@@ -1,5 +1,9 @@
 <template>
-    <div class="wrapper-note-item" v-on:click="currencyNote">
+    <div 
+        class="wrapper-note-item" 
+        v-on:click="currencyNote"
+        v-on:dragstart="onDragStart($event, itemNote)"
+    >
         <div class="content-wrapper-note-item ">
             <div class="position-number">#16</div>
             <div class="subhead">{{itemNote.title}}</div>
@@ -37,6 +41,11 @@ export default{
         currencyNote(){
             this.$store.commit('currencyNote',this.itemNote)
             this.$store.commit('showModalNoteItem')
+        },
+        onDragStart(e,item){
+            e.dataTransfer.dropEffect = 'move'
+            e.dataTransfer.effectAllowed = 'move'
+            e.dataTransfer.setData('noteItem',JSON.stringify(item))
         }
     }
 }

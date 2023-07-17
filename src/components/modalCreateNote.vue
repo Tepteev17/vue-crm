@@ -111,8 +111,8 @@ export default {
             }
             if (!this.v$.$error) {
                 try {
-                    this.$store.dispatch('fetchInfo')
                     await this.$store.dispatch('createNewNote', this.newNoteData)
+                    this.$store.dispatch('fetchInfo')
                     this.$store.commit('hideModal')
                     this.newNoteData = {
                             title: '',
@@ -120,7 +120,7 @@ export default {
                             startDate: '',
                             endDate: '',
                             tag: '',
-                        }
+                    }
                 } catch (err) {}
             }
         }

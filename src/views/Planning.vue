@@ -2,7 +2,7 @@
     <div class="planning-wrapper">
         <div class="planning-board">
             <boardItem
-                v-for="boardItem in nameBoardItems"
+                v-for="boardItem in getNameBoardItems"
                 :key="boardItem.key"
                 v-bind:boardItem="boardItem"
             />
@@ -15,17 +15,13 @@ export default{
     components:{
         boardItem
     },
-    data(){
-        return{
-            nameBoardItems:[
-                {title:'New', class:'new-items-class',key:'new'},
-                {title:'In work', class:'in-work-items-class',key:'inWork'},
-                {title:'Suspended', class:'suspended-items-class',key:'suspended'},
-                {title:'Completed', class:'complited-items-class',key:'completed'},
-                {title:'canceled', class:'canceled-items-class',key:'canceled'}
-            ]
+    computed:{
+        getNameBoardItems(){
+            try{
+                return this.$store.getters.boardTags
+            }catch(e){}
         }
-    },
+    }
 
 }
 </script>

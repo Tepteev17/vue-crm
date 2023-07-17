@@ -16,7 +16,18 @@ export default{
                 const uid = await dispatch('getUid')
                 await firebase.database().ref(`/users/${uid}/info/userNotesTags/${updateNote.tag.key}/${updateNote.id}`).update(updateNote)
             } catch (e){
-
+                commit('setError',e)
+                console.log(e)
+            }
+        },
+        async deleteCurrentNote({dispatch,commit},noteItem){
+            try{
+                console.log(noteItem)
+                const uid = await dispatch('getUid')
+                await firebase.database().ref(`/users/${uid}/info/userNotesTags/${noteItem.tag.key}/${noteItem.id}`).remove()
+            }catch (e){
+                commit('setError',e)
+                console.log(e)
             }
         }
     }

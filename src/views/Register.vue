@@ -38,7 +38,7 @@
             <div class="logout">
                 <button type="submit" class="btn">Register</button>
             </div>
-            <router-link to="/login" class="profile">Login</router-link>
+            <router-link to="/" class="profile">Login</router-link>
         </form>
     </div>
 </template>
