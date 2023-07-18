@@ -66,10 +66,13 @@
                                     </div>
                                 </div>
                             </div>
+                            <subtasksTemplate
+                                v-bind:subtasksList="currencyNoteItem.subtasksList"
+                            />
                         </div>
                     </div>
                 </div>
-                <div class="subtasks-note-interaction"></div>
+
                 <div class="footer-note-interaction">
                     <div class="wrapper-add-notes">
                         <button class="add-notes flex-gap-8" type="submit" >
@@ -92,6 +95,7 @@
     </div>
 </template>
 <script>
+import subtasksTemplate from '@/components/subtasksTemplate.vue'
 import Vuelidate from '@vuelidate/core'
 import { email, required, minLength } from '@vuelidate/validators'
 import "vue-select/dist/vue-select.css";
@@ -100,6 +104,9 @@ export default {
         return {
             v$: Vuelidate()
         }
+    },
+    components:{
+        subtasksTemplate
     },
     data() {
         return {
@@ -123,7 +130,6 @@ export default {
             this.$store.commit('hideModalNoteItem')
         },
         async removeNote(){
-            console.log(1)
             await this.$store.dispatch('deleteCurrentNote', this.newNoteData)
             this.$store.commit('hideModalNoteItem')
             await this.$store.dispatch('fetchInfo')

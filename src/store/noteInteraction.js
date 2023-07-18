@@ -22,9 +22,18 @@ export default{
         },
         async deleteCurrentNote({dispatch,commit},noteItem){
             try{
-                console.log(noteItem)
                 const uid = await dispatch('getUid')
                 await firebase.database().ref(`/users/${uid}/info/userNotesTags/${noteItem.tag.key}/${noteItem.id}`).remove()
+            }catch (e){
+                commit('setError',e)
+                console.log(e)
+            }
+        },
+        async createNewSubtasks({dispatch,commit}, objItem){
+            try{
+                const uid = await dispatch('getUid')
+                const newTasks = await firebase.database().ref(`/users/${uid}/info/userNotesTags/${objItem.noteItem.tag.key}/${objItem.noteItem.id}/subtasksList/`).push(objItem.title)
+                return newTasks.key
             }catch (e){
                 commit('setError',e)
                 console.log(e)

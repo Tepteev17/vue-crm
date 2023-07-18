@@ -15,6 +15,7 @@
 }
 
 .note-interaction {
+    overflow-y: scroll;
     position: relative;
     width: 100%;
     display: flex;
@@ -47,6 +48,7 @@
     font-weight: 500;
     line-height: 48px;
 }
+
 .tags-state {
     color: #FFF;
     /* Callout */
@@ -111,12 +113,11 @@
     padding: 0 96px;
 }
 
-.wrapper-note-change-information {
-}
+.wrapper-note-change-information {}
 
 .change-tags {
-    border-top:#E7F6FB 1px solid;
-    border-bottom:#E7F6FB 1px solid;
+    border-top: #E7F6FB 1px solid;
+    border-bottom: #E7F6FB 1px solid;
     padding: 36px 0;
 }
 
@@ -126,14 +127,13 @@
     gap: 24px;
 }
 
-.change-information-item {
-}
-.subhead-change-information-item{
+.change-information-item {}
+
+.subhead-change-information-item {
     min-width: 254px;
 }
-.subhead-change-information-item .silent-text {
-    
-}
+
+.subhead-change-information-item .silent-text {}
 
 .wrapper-input-should-done {
     width: 100%;
@@ -145,7 +145,7 @@
     padding: 0 96px;
 }
 
-.wrapper-add-notes{
+.wrapper-add-notes {
     cursor: pointer;
     border-radius: 24px;
     background: var(--background-grey, #F6F9FC);
@@ -156,7 +156,7 @@
     align-self: stretch;
 }
 
-.add-notes{
+.add-notes {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -169,6 +169,7 @@
     align-self: stretch;
     flex: 1 0 0;
 }
+
 .remove-notes {
     cursor: pointer;
     display: flex;
@@ -183,24 +184,27 @@
     align-self: stretch;
     flex: 1 0 0;
 }
-.wrapper-date span{
+
+.wrapper-date span {
     color: var(--any-tertiary, #B9BAD5);
     /* Subhead */
     font-family: Lato;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px; /* 150% */
+    line-height: 24px;
+    /* 150% */
     letter-spacing: 0.077px;
 }
-.form-new-note{
+
+.form-new-note {
     display: flex;
     flex-direction: column;
     gap: 36px;
 }
 
 /* select */
-.select-tags{
+.select-tags {
     position: relative;
     border: none;
     width: 100%;
@@ -210,34 +214,121 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px; /* 150% */
+    line-height: 24px;
+    /* 150% */
     letter-spacing: 0.077px;
 }
-.select-tags-item{
+
+.select-tags-item {
     width: 100%;
     color: var(--any-primary-black, #262F3D);
     /* Subhead */
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px; /* 150% */
+    line-height: 24px;
+    /* 150% */
     letter-spacing: 0.077px;
 }
-.select-tags .vs__dropdown-toggle{
+
+.select-tags .vs__dropdown-toggle {
     height: 24px;
 }
-.vs__selected{
+
+.vs__selected {
     margin: 0;
     height: 24px;
-    padding: 0 ;
+    padding: 0;
+}
+
+/* subtasks */
+
+.subtasks-note-interaction-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.dropdown-content {
+    display: none;
+    transition: 1s all;
+}
+
+.subtasks-note-interaction-add-window {
+    position: absolute;
+    top: 68px;
+    right: 0;
+    border-radius: 16px;
+    background: var(--any-primary-white, #FFF);
+    /* Pop */
+    box-shadow: -24px 0px 96px 0px rgba(105, 132, 230, 0.16);
+    max-width: 520px;
+    width: 100%;
+    padding: 24px;
+    flex-direction: column;
+    gap: 24px;
+    transition: 1s all;
+}
+
+.subtasks-note-interaction-header {
+    border-radius: 16px;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.subtasks-note-interaction-unput input {
+    border-left: 2px solid var(--any-accent, #468FC5);
+    border-radius: 0px;
+    padding-left: 8px;
+}
+
+.subtask-icon-add-and-hide {
+    cursor: pointer;
+    display: flex;
+}
+
+.wrapper-hide-subtasks {
+    transform: rotate(90deg);
+    transition: 1s all;
+}
+
+.wrapper-hide-subtasks.hide {
+    transform: rotate(-90deg);
+}
+
+.dropdown-content.active {
+    display: flex;
+}
+
+.subtasks-note-interaction-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.subtasks-note-interaction-item {
+    padding: 24px 32px;
+    border-radius: 16px;
+    border: 1px solid var(--stroke-primary, #E7F6FB);
+    background: var(--any-primary-white, #FFF);
+    /* Blue */
+    box-shadow: 0px 8px 16px 0px rgba(70, 143, 197, 0.08);
+}
+
+.wrapper-hide-subtasks {}
+#btn-subtasks{
+    width: auto;
 }
 @keyframes HideList {
-  from {
-    transform: scaleY(1);
-  }
-  to {
-    transform: scaleY(0);
-  }
+    from {
+        transform: scaleY(1);
+    }
+
+    to {
+        transform: scaleY(0);
+    }
 }
 
 @keyframes showModal {

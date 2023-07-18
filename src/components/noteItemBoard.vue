@@ -10,7 +10,7 @@
             <div class="date-wrapper flex-gap-16 wrapper-date">
                 <div class="start-date silent-text">{{ itemNote.startDate }}</div>
                 <span>-</span>
-                <div class="end-date silent-text">{{ itemNote.endDate }}</div>
+                <div class="end-date silent-text">{{ itemNote.endDate || '. . .' }}</div>
             </div>
             <div class="wrapper-details flex-gap-16">
                     <div class="details-item flex-gap-8">
