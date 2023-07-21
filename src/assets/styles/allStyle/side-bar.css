@@ -14,7 +14,6 @@
     border-radius: 0px 24px 24px 0px;
 }
 .sidebar.active{
-    display: block;
     position: relative;
     display: flex;
     max-width: 240px;
@@ -157,4 +156,28 @@
 .hide-sidebar {
     position: relative;
     padding: 24px;
+    cursor: pointer;
 }
+@media (max-width:868px){
+    .sidebar.active{
+        position: absolute;
+        left: 0;
+        width: 100%;
+        display: flex;
+        max-width: 100%;
+    }
+    .sidebar.active .navbar-toggle:has(.router-link-active) {
+        width: auto;
+    }
+    .sidebar{
+        position: absolute;
+        left: -100%;
+
+    }
+    .hide-sidebar{
+        display: none;
+    }
+    .in-sidebar{
+        display: block;
+    }
+}   

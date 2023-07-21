@@ -11,6 +11,8 @@
                     </button>
                 </div>
                 <div id="notifications"><img src="@/assets/img/notifications-icon.svg" alt=""></div>
+                <div class="hamburger-slim"
+                     v-on:click="showSidebar"></div>
             </div>
         </div>
         <div class="search-wrapper bg-band-gray">
@@ -44,6 +46,9 @@ export default{
     methods:{
         showModal(){
             this.$store.commit('showModal')
+        },
+        showSidebar(){
+            this.$store.commit('showSidebar')
         }
     }
 }

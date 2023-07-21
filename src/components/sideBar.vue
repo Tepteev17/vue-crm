@@ -1,7 +1,7 @@
 <template>
     <div id="show-side-btn"
          :class="{active:!isActiveSidebar}"
-         v-on:click="isActiveSidebar = !isActiveSidebar">
+         v-on:click="showSidebar">
         <div class="hide-sidebar"><img src="@/assets/img/show-icon-sidebar.svg" alt=""></div>
     </div>
     <div class="sidebar"
@@ -11,8 +11,8 @@
             <div class="logo">
                 <div class="wrapper-logo-and-hide">
                     <div class="logo-icon"><img src="@/assets/img/logo-icon.svg" alt=""></div>
-                    <div class="hide-sidebar"
-                        v-on:click="isActiveSidebar = !isActiveSidebar"
+                    <div class="hide-sidebar in-sidebar"
+                        v-on:click="showSidebar"
                     ><img src="@/assets/img/hide-icon-sidebar.svg" alt=""></div>
                 </div>
                 <router-link to="/profile" class="profile">
@@ -40,7 +40,6 @@
 export default {
     data() {
         return {
-            isActiveSidebar:true,
             links: [
                 { title: 'Cash acc', path: '/cashAcc', pathSVG: 'stat.svg' },
                 { title: 'History', path: '/history', pathSVG: 'history.svg' },
@@ -56,12 +55,18 @@ export default {
         },
         getCurrencyRoute(){
             this.$store.commit('changeCurrencyRoute',this.$route.name)
+        },
+        isActiveSidebar(){
+            return this.$store.getters.isSidebarState
         }
     },
     methods:{
         async logout(){
             await this.$store.dispatch('logout')
             this.$router.push('/login')
+        },
+        showSidebar(){
+            this.$store.commit('showSidebar')
         }
     }
 }

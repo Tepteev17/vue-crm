@@ -2,7 +2,8 @@ export default{
     state:{
         isModalActive:false,
         isModalNoteItemActive:false,
-        currencyNote:{}
+        currencyNote:{},
+        isSidebarActive:false
     },
     mutations:{
         hideModal(state){
@@ -19,11 +20,15 @@ export default{
         },
         currencyNote(state,currencyNote){
             state.currencyNote = currencyNote
+        },
+        showSidebar(state){
+            state.isSidebarActive = !state.isSidebarActive
         }
     },
     getters:{
         isModal:state => state.isModalActive,
         isModalNoteItem: state => state.isModalNoteItemActive,
-        currencyNote: state => state.currencyNote
+        currencyNote: state => state.currencyNote,
+        isSidebarState: state => state.isSidebarActive
     }
 }

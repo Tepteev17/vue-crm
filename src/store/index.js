@@ -16,9 +16,9 @@ export default createStore({
     ]
   },
   getters: {
-    error: s => s.error,
-    currencyRoute: s => s.currencyRoute,
-    boardTags:s => s.boardTags
+    error: state => state.error,
+    currencyRoute: state => state.currencyRoute,
+    boardTags:state => state.boardTags
   },
   mutations: {
     setError(state,error){

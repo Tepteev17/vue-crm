@@ -94,3 +94,37 @@
 #input-name {
     color: var(--any-accent, #468FC5);
 }
+@media (max-width:868px) {
+    .planning-wrapper{
+        padding: 25px;
+    }
+    .planning-board{
+        position: relative;
+        display: block;
+        width: 100%;
+        overflow-y: scroll;
+    }
+    .header-board-item{
+        width: calc(100% - 48px);
+    }
+    .board-item.disable-board-item {
+        position: relative;
+        overflow: hidden;
+        width: calc(100%);
+        height: auto;
+        writing-mode: horizontal-tb;
+        padding: 16px 0;
+    }
+    .board-item.disable-board-item .header-board-item .subhead{
+        transform: rotate(0deg);
+    }
+    .board-item.disable-board-item .header-board-item .wrapper-arrow-board-item{
+        transform: rotate(-90deg);
+    }
+    .board-item.disable-board-item .header-board-item{
+        flex-direction: row;
+        justify-content: space-between;
+        width: calc(100% - 48px);
+        padding: 16px 24px;
+    }
+}

@@ -10,11 +10,14 @@
                 {{ boardItem.title }}
                 <span class="lenght-borad-item">( {{ length || '0'}} )</span>
             </div>
-            <div class="wrapper-arrow-board-item" v-on:click="disableItemBoard" >
+            <div class="wrapper-arrow-board-item wrapper-hide-subtasks" 
+                 v-on:click="disableItemBoard"
+                 :class="{hide:isDisableItem}">
+                 
                 <img src="@/assets/img/arrow-hide-board-item.svg" alt="">
             </div>
         </div>
-        <div class="wrapper-board-item-list" :class="{'disable-board-item':isDisableItem}">
+        <div class="wrapper-board-item-list" :class="{'disable-board-item':isDisableItem || !length}">
             <div class="board-item-list" 
                  v-on:dragover.prevent
                  v-on:dragenter.prevent
@@ -27,6 +30,10 @@
                         v-on:drop="onDrop($event, this.boardItem)"
                         draggable="true"
                     />
+                    <div
+                        class="title"
+                        v-if="!length"
+                    >Empty</div>
             </div>
         </div>
     </div>
