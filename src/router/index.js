@@ -15,10 +15,10 @@ const routes = [
     component: () => import('../views/Categories.vue')
   },
   {
-    path: '/cashAcc',
-    name: 'Cash acc',
+    path: '/yourCharts',
+    name: 'Your Charts',
     meta: { layout: 'mainLayout' },
-    component: () => import('../views/CashAcc.vue')
+    component: () => import('../views/yourCharts.vue')
   },
   {
     path: '/planning',

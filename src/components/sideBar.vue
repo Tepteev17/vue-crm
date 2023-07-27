@@ -41,11 +41,11 @@ export default {
     data() {
         return {
             links: [
-                { title: 'Cash acc', path: '/cashAcc', pathSVG: 'stat.svg' },
+                { title: 'Your charts', path: '/yourCharts', pathSVG: 'stat.svg' },
                 { title: 'History', path: '/history', pathSVG: 'history.svg' },
                 { title: 'Planing', path: '/planning', pathSVG: 'planning.svg' },
                 { title: 'New Edit', path: '/record', pathSVG: 'edit.svg' },
-                { title: 'Category', path: '/', pathSVG: 'category.svg' }
+                { title: 'Category', path: '/categories', pathSVG: 'category.svg' }
             ]
         }
     },
@@ -54,7 +54,7 @@ export default {
             return this.$store.getters.info.name
         },
         getCurrencyRoute(){
-            this.$store.commit('changeCurrencyRoute',this.$route.name)
+            this.$store.commit('changeCurrentRoute',this.$route.name)
         },
         isActiveSidebar(){
             return this.$store.getters.isSidebarState

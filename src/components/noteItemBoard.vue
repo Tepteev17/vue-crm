@@ -1,7 +1,7 @@
 <template>
     <div 
         class="wrapper-note-item" 
-        v-on:click="currencyNote"
+        v-on:click="currentNote"
         v-on:dragstart="onDragStart($event, itemNote)"
     >
         <div class="content-wrapper-note-item ">
@@ -38,8 +38,8 @@ export default{
         }
     },
     methods:{
-        currencyNote(){
-            this.$store.commit('currencyNote',this.itemNote)
+        currentNote(){
+            this.$store.commit('currentNote',this.itemNote)
             this.$store.commit('showModalNoteItem')
         },
         onDragStart(e,item){

@@ -10,12 +10,16 @@
   "dependencies": {
     "@vuelidate/core": "^2.0.2",
     "@vuelidate/validators": "^2.0.2",
+    "chart.js": "^4.3.0",
     "core-js": "^3.8.3",
     "firebase": "^8.6.8",
     "register-service-worker": "^1.7.2",
     "vue": "^3.2.13",
+    "vue-chartjs": "^5.2.0",
     "vue-router": "^4.0.3",
     "vue-select": "^4.0.0-beta.6",
+    "vue-trading-view": "^1.0.1",
+    "vue-tradingview-widgets": "^1.2.4",
     "vuex": "^4.0.0"
   },
   "devDependencies": {
@@ -27,6 +31,7 @@
     "@vue/cli-plugin-router": "^5.0.8",
     "@vue/cli-plugin-vuex": "~5.0.0",
     "@vue/cli-service": "^5.0.8",
+    "chartjs-plugin-gradient": "^0.6.1",
     "sass": "^1.32.7",
     "sass-loader": "^12.0.0"
   }

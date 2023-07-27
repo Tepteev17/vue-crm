@@ -49,7 +49,7 @@ export default {
     },
     data: () => ({
         email:'',
-        password:'Xiaomi202020ST'
+        password:''
     }),
     validations:{
         email: {required, email},

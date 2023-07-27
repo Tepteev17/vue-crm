@@ -5,7 +5,7 @@
 @import url('allStyle/side-bar.css');
 @import url('allStyle/record-style.css');
 @import url('allStyle/register-style.css');
-@import url('allStyle/cashAcc-style.css');
+@import url('allStyle/your-charts-style.css');
 @import url('allStyle/planning-style.css');
 @import url('allStyle/modal-style.css');
 @import url('allStyle/note-item-in-board-style.css');
@@ -28,7 +28,8 @@ body {
 .app {
   height: 100vh;
 }
-
+canvas{
+}
 .app-content {
   display: flex;
   height: calc(100%);

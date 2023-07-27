@@ -1,0 +1,11 @@
+.charts-wrapper{
+    padding:16px ;
+    position: relative;
+    height: 100%;
+    overflow-x: scroll;
+}
+.charts-wrapper canvas{
+    width: auto;
+    height: 100%;
+    margin: auto;
+}

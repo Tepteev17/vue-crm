@@ -1,5 +1,5 @@
 <template>
     <div class="history-wrapper">
-        history
+        Empty
     </div>
 </template>

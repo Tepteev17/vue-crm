@@ -84,13 +84,13 @@ export default{
                 this.v$.$touch()
                 return
             }
-            
-            const key = await this.$store.dispatch('createNewSubtasks',{noteItem:this.$store.getters.currencyNote,title: this.subtaskTitle})
+            const key = await this.$store.dispatch('createNewSubtasks',{noteItem:this.$store.getters.currentNote, title: this.subtaskTitle})
             if(this.subtasksList){ 
-                this.subtaskTitle.key = this.subtaskTitle
+                this.subtasksList.key = this.subtaskTitle
             } else{
                 this.subtaskTitle = {key:this.subtaskTitle}
             }
+
             this.subtaskTitle = ''
             this.isActiveWindow = false
         }

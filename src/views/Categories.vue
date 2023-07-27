@@ -1,6 +1,6 @@
 <template>
     <div class="categories">
-        dfhdfgh
+        Empty
     </div>
 </template>
 <style>

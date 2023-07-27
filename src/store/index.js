@@ -6,7 +6,7 @@ import noteInteraction from './noteInteraction'
 export default createStore({
   state: {
     error:null,
-    currencyRoute:null,
+    CurrentRoute:null,
     boardTags:[
       {title:'New', class:'new-items-class',key:'new'},
       {title:'In work', class:'in-work-items-class',key:'inWork'},
@@ -17,7 +17,7 @@ export default createStore({
   },
   getters: {
     error: state => state.error,
-    currencyRoute: state => state.currencyRoute,
+    CurrentRoute: state => state.CurrentRoute,
     boardTags:state => state.boardTags
   },
   mutations: {
@@ -27,16 +27,13 @@ export default createStore({
     clearError(state){
       state.error = null
     },
-    changeCurrencyRoute(state, route){
-      state.currencyRoute = route
-    },
-    setBoardTags(){
-
+    changeCurrentRoute(state, route){
+      state.CurrentRoute = route
     }
   },
   actions: {
-    changeCurrencyRouete(ctx,route){
-      ctx.commit('changeCurrencyRouete',route)
+    changeCurrentRouete(ctx,route){
+      ctx.commit('changeCurrentRouete',route)
     }
   },
   modules: {

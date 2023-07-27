@@ -1,13 +1,13 @@
 <template>
-    <div   class="wrapper-note-interaction" 
+    <div class="wrapper-note-interaction" 
         :class="{ active: this.$store.getters.isModalNoteItem }" 
         v-if="this.$store.getters.isModalNoteItem">
         <div class="note-interaction">
             <div class="header-note-interaction">
                 <div class="head-title">
-                    <div class="title">{{ currencyNoteItem.title}}</div>
-                    <div class="tags-state new-items-class bg-band-gray" :class="currencyNoteItem.tag.class">
-                        {{ currencyNoteItem.tag.title || 'new' }}</div>
+                    <div class="title">{{ currentNoteItem.title}}</div>
+                    <div class="tags-state new-items-class bg-band-gray" :class="currentNoteItem.tag.class">
+                        {{ currentNoteItem.tag.title || 'new' }}</div>
                 </div>
                 <div class="wrapper-interaction-hide bg-band-gray" v-on:click="hideModal">
                     <div class="hide-btn">
@@ -60,14 +60,14 @@
                                     <div class="wrapper-input-should-done wrapper-select-tags ">
                                         <!-- <v-select class="select-tags" :options="boardTags" label="title" 
                                             v-model="newNoteData.tag"></v-select> -->
-                                            <div class="tags-state new-items-class bg-band-gray" :class="currencyNoteItem.tag.class">
-                                                    {{ currencyNoteItem.tag.title || 'new' }}
+                                            <div class="tags-state new-items-class bg-band-gray" :class="currentNoteItem.tag.class">
+                                                    {{ currentNoteItem.tag.title || 'new' }}
                                             </div>
                                     </div>
                                 </div>
                             </div>
                             <subtasksTemplate
-                                v-bind:subtasksList="currencyNoteItem.subtasksList"
+                                v-bind:subtasksList="currentNoteItem.subtasksList"
                             />
                         </div>
                     </div>
@@ -97,7 +97,7 @@
 <script>
 import subtasksTemplate from '@/components/subtasksTemplate.vue'
 import Vuelidate from '@vuelidate/core'
-import { email, required, minLength } from '@vuelidate/validators'
+import { required} from '@vuelidate/validators'
 import "vue-select/dist/vue-select.css";
 export default {
     setup() {
@@ -139,9 +139,9 @@ export default {
         boardTags() {
             return this.$store.getters.boardTags
         },
-       currencyNoteItem(){
+       currentNoteItem(){
            try{
-                this.newNoteData = this.$store.getters.currencyNote
+                this.newNoteData = this.$store.getters.currentNote
                 return this.newNoteData
            }catch(e){
             console.log(e)
