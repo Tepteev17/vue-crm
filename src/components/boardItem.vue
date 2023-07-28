@@ -13,7 +13,6 @@
             <div class="wrapper-arrow-board-item wrapper-hide-subtasks" 
                  v-on:click="disableItemBoard"
                  :class="{hide:isDisableItem}">
-                 
                 <img src="@/assets/img/arrow-hide-board-item.svg" alt="">
             </div>
         </div>
@@ -22,18 +21,15 @@
                  v-on:dragover.prevent
                  v-on:dragenter.prevent
             >
-                    <noteItemBoard
+                <noteItemBoard
                         class="list-item"
                         v-for="itemNote in filterNotesList"
                         :key="itemNote.id"
                         v-bind:itemNote="itemNote"
                         v-on:drop="onDrop($event, this.boardItem)"
                         draggable="true"
-                    />
-                    <div
-                        class="title"
-                        v-if="!length"
-                    >Empty</div>
+                />
+                <div class="title" v-if="!length">Empty</div>
             </div>
         </div>
     </div>

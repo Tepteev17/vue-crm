@@ -38,6 +38,15 @@ export default{
                 commit('setError',e)
                 console.log(e)
             }
+        },
+        async deleteSubtasksItem({ dispatch, commit }, objItem) {
+            try {
+                const uid = await dispatch('getUid')
+                await firebase.database().ref(`/users/${uid}/info/userNotesTags/${objItem.noteItem.tag.key}/${objItem.noteItem.id}/subtasksList/${objItem.key}`).remove()
+            } catch (error) {
+                commit('setError', e)
+                console.log(e)
+            }
         }
     }
 }

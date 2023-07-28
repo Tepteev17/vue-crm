@@ -18,6 +18,7 @@ export default {
                 "locale": "ru",
                 "hide_side_toolbar": false,
                 "allow_symbol_change": true,
+                symbol:'USDRUB'
             }
         }
     },

@@ -309,6 +309,8 @@
 }
 
 .subtasks-note-interaction-item {
+    display: flex;
+    justify-content: space-between;
     padding: 24px 32px;
     border-radius: 16px;
     border: 1px solid var(--stroke-primary, #E7F6FB);

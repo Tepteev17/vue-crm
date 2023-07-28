@@ -44,13 +44,18 @@
 
         <div class="subtasks-note-interaction-list" v-if="isDropdownSubtasksList">
              <div class="subtasks-note-interaction-item silent-text"
-                  v-for="(value,name, index) in subtasksList"
+                  v-for="(value,name, index) in subtasksListComputed"
                   :key="index">
                 <div class="flex-gap-8 subhead">
                     <div class="position-number">
                          #{{ index+1 }}
                     </div>
-                    {{ value }}
+                    <div>{{ value }}</div>
+                </div>
+                <div class="delete-subtasks"
+                    v-on:click="deleteSubtasksItem(name)"
+                >
+                    <img src="@/assets/img/remove-icon.svg" alt="">
                 </div>
             </div> 
         </div>
@@ -75,7 +80,8 @@ export default{
         return{
             subtaskTitle:'',
             isDropdownSubtasksList:true,
-            isActiveWindow:false
+            isActiveWindow:false,
+            localSubtasksList:{}
         }
     },
     methods:{
@@ -85,21 +91,23 @@ export default{
                 return
             }
             const key = await this.$store.dispatch('createNewSubtasks',{noteItem:this.$store.getters.currentNote, title: this.subtaskTitle})
-            if(this.subtasksList){ 
-                this.subtasksList.key = this.subtaskTitle
-            } else{
-                this.subtaskTitle = {key:this.subtaskTitle}
-            }
-
+            this.localSubtasksList[key] = this.subtaskTitle 
             this.subtaskTitle = ''
             this.isActiveWindow = false
+        },
+        async deleteSubtasksItem(name){
+            await this.$store.dispatch('deleteSubtasksItem', { noteItem: this.$store.getters.currentNote, key: name })
+            delete this.localSubtasksList[name]
         }
     },
     computed:{
-        positionNumber(subtaskItem){
-            if(this.subtaskTitle){
-                return subtasksList.findIndex(p => p == subtaskItem)
+        subtasksListComputed(){
+            if (this.subtasksList){
+                this.localSubtasksList = this.subtasksList
+            } else{
+                this.localSubtasksList = {}
             }
+            return this.localSubtasksList
         }
     },
     validations: {
