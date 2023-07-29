@@ -1,4 +1,3 @@
-
 .floatingButton {
     display: block;
     width: 60px;
@@ -16,13 +15,11 @@
     opacity: 1;
     transition: all .4s;
 }
-
 .floatingButton:hover,
 .floatingButton:focus,
 .floatingButton:active {
     box-shadow: 0 0 25px #ffffff;
 }
-
 .plus:before, .plus:after {
     position: absolute;
     left: 20px;

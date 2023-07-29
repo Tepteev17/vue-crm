@@ -1,5 +1,6 @@
 <template>
-    <nav class="navbar">
+    <nav class="navbar"
+        :class="{ 'filter-blur': this.$store.getters.isBlurEffect }">
         <div class="nav-wrapper">
             <div class="title-header">
                 {{ currentRoute}}

@@ -3,7 +3,8 @@ export default{
         isModalActive:false,
         isModalNoteItemActive:false,
         currentNote:{},
-        isSidebarActive:false
+        isSidebarActive:false,
+        isBlurEffectActive:false
     },
     mutations:{
         hideModal(state){
@@ -24,12 +25,15 @@ export default{
         showSidebar(state){
             state.isSidebarActive = !state.isSidebarActive
         },
-
+        changeBlurEffect(state){
+            state.isBlurEffectActive = !state.isBlurEffectActive
+        }
     },
     getters:{
         isModal:state => state.isModalActive,
         isModalNoteItem: state => state.isModalNoteItemActive,
         currentNote: state => state.currentNote,
-        isSidebarState: state => state.isSidebarActive
+        isSidebarState: state => state.isSidebarActive,
+        isBlurEffect:state => state.isBlurEffectActive
     }
 }

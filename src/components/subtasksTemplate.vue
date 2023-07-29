@@ -64,11 +64,11 @@
 <script>
 import Vuelidate from '@vuelidate/core'
 import { required } from '@vuelidate/validators'
-export default{
-    props:{
-        subtasksList:{
-            required:true,
-            type:Object
+export default {
+    props: {
+        subtasksList: {
+            required: true,
+            type: Object
         }
     },
     setup() {
@@ -76,42 +76,46 @@ export default{
             v$: Vuelidate()
         }
     },
-    data(){
-        return{
-            subtaskTitle:'',
-            isDropdownSubtasksList:true,
-            isActiveWindow:false,
-            localSubtasksList:{}
+    data() {
+        return {
+            subtaskTitle: '',
+            isDropdownSubtasksList: true,
+            isActiveWindow: false,
+            localSubtasksList: {}
         }
     },
-    methods:{
-        async addSubtask(){
+    methods: {
+        async addSubtask() {
             if (this.v$.$invalid) {
                 this.v$.$touch()
                 return
             }
-            const key = await this.$store.dispatch('createNewSubtasks',{noteItem:this.$store.getters.currentNote, title: this.subtaskTitle})
-            this.localSubtasksList[key] = this.subtaskTitle 
+            const key = await this.$store.dispatch('createNewSubtasks',{
+                    noteItem: this.$store.getters.currentNote,
+                    title: this.subtaskTitle
+                }
+            )
+            this.localSubtasksList[key] = this.subtaskTitle
             this.subtaskTitle = ''
             this.isActiveWindow = false
         },
-        async deleteSubtasksItem(name){
-            await this.$store.dispatch('deleteSubtasksItem', { noteItem: this.$store.getters.currentNote, key: name })
+        async deleteSubtasksItem(name) {
             delete this.localSubtasksList[name]
+            await this.$store.dispatch('deleteSubtasksItem', { noteItem: this.$store.getters.currentNote, key: name })
         }
     },
-    computed:{
-        subtasksListComputed(){
-            if (this.subtasksList){
+    computed: {
+        subtasksListComputed() {
+            if (this.subtasksList) {
                 this.localSubtasksList = this.subtasksList
-            } else{
+            } else {
                 this.localSubtasksList = {}
             }
             return this.localSubtasksList
         }
     },
     validations: {
-        subtaskTitle:{ required }
+        subtaskTitle: { required }
     }
 }
 </script>

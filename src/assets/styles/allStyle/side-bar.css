@@ -12,7 +12,9 @@
     flex-direction: column;
     justify-content: space-between;
     border-radius: 0px 24px 24px 0px;
+    transition: 0.3s ease-in-out;
 }
+
 .sidebar.active{
     position: relative;
     display: flex;
@@ -36,11 +38,9 @@
     list-style: none;
 
 }
-
 #toggleView {
     margin-left: 44px;
 }
-
 .menu-icon {
     float: right;
 }
@@ -55,13 +55,11 @@
     margin: 26px 0;
     padding: 0;
 }
-
 .sidebar-nav li {
     padding: 10px 24px;
     display: flex;
     align-items: center;
 }
-
 .navbar-toggle:has(.router-link-active) {
     background-color: rgba(70, 143, 197, 1);
     color: white;
@@ -69,7 +67,6 @@
     width: 200px;
     box-shadow: 0px 2px 0px 0px #1E679D;
 }
-
 .sidebar-nav li a {
     font-size: 19px;
     text-decoration: none;
@@ -78,7 +75,6 @@
     line-height: 25px;
     padding: 0 8px;
 }
-
 .sidebar-nav li:hover {
     background: #ffffff;
     -webkit-transition: background 0.5s;
@@ -86,18 +82,16 @@
     background-color: rgba(70, 143, 197, 1);
     color: white;
 }
-
 .wrapper-logout {
     position: relative;
     color: white;
     cursor: pointer;
-    margin: 36px 0;
+    margin: 36px 24px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 8px;
 }
-
 .logout-link {
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.10);
@@ -108,17 +102,14 @@
     align-items: center;
     padding: 12px 24px;
 }
-
 .logout-link img {
     margin: 8px;
 }
-
 .logo {
     position: relative;
     width: 100%;
     display: block;
 }
-
 .profile {
     display: flex;
     justify-content: center;
@@ -135,24 +126,19 @@
     letter-spacing: 1px;
     list-style: none;
 }
-
 .wrapper-img {
     width: 24px;
 }
-
-
 .wrapper-logo-and-hide {
     position: relative;
     display: flex;
     justify-content: space-between;
     height: 120px;
 }
-
 .logo-icon {
     position: relative;
     padding: 24px;
 }
-
 .hide-sidebar {
     position: relative;
     padding: 24px;

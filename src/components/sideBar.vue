@@ -5,7 +5,7 @@
         <div class="hide-sidebar"><img src="@/assets/img/show-icon-sidebar.svg" alt=""></div>
     </div>
     <div class="sidebar"
-        :class="{active:isActiveSidebar}"
+        :class="{active:isActiveSidebar,'filter-blur':this.$store.getters.isBlurEffect }"
     >
         <div class="sidebar-content">
             <div class="logo">

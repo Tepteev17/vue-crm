@@ -23,9 +23,10 @@
             >
                 <noteItemBoard
                         class="list-item"
-                        v-for="itemNote in filterNotesList"
-                        :key="itemNote.id"
+                        v-for="(itemNote, value, index) in filterNotesList"
+                        :key="index"
                         v-bind:itemNote="itemNote"
+                        v-bind:index="index"
                         v-on:drop="onDrop($event, this.boardItem)"
                         draggable="true"
                 />
@@ -76,6 +77,7 @@ export default{
                 noteItem.tag = tag
                 await this.$store.dispatch('createNewNote', noteItem)
                 await this.$store.dispatch('fetchInfo')
+                this.$store.commit('changeBlurEffect')
             } catch (e){}
         }
     },

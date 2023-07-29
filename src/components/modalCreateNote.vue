@@ -49,7 +49,7 @@
                                 <div class="input-enty wrapper-date flex-gap-16 silent-text wrapper-date">
                                     <input type="date" placeholder="empty" v-model="newNoteData.startDate">
                                     <span>-</span>
-                                    <input type="date" placeholder="empty" v-model="newNoteData.endDate">
+                                    <input type="date" placeholder="empty" v-model="newNoteData.endDate" :min="newNoteData.startDate">
                                 </div>
                             </div>
                             <div class="change-information-item flex-gap-8">
